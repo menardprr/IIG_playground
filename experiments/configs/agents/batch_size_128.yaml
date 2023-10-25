@@ -1,0 +1,6 @@
+agent_class: 'agents.prox.ProxAgent'
+
+init_kwargs:
+  config_kwargs:
+    batch_size: 128
+    name: 'batch_size_128'

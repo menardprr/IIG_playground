@@ -1,0 +1,6 @@
+agent_class: 'agents.prox.ProxAgent'
+
+init_kwargs:
+  config_kwargs:
+    gae_lambda: 0.0
+    name: 'gae_lambda_0e0'

@@ -1,0 +1,66 @@
+description: sweep_gae_lambda
+
+gpu_idx: 0
+
+game_names: 
+  - leduc_poker
+
+save_path: ./results
+
+agents: 
+  - ./experiments/configs/agents/gae_lambda_0e0.yaml
+  - ./experiments/configs/agents/gae_lambda_75e-1.yaml
+  - ./experiments/configs/agents/gae_lambda_95e-1.yaml
+  - ./experiments/configs/agents/gae_lambda_1e0.yaml
+
+global_init_kwargs:
+
+  verbose: False
+
+  pi_network_kwargs:
+    hidden_layers_sizes: [256, 256]
+
+  pi_optimizer_kwargs:
+    optimizer_type: adam
+    schedule:
+    clip_gradient: 1.0
+    optimizer_kwargs: 
+      learning_rate: 0.0001
+      b1: 0.9
+      b2: 0.999
+
+  val_network_kwargs:
+    hidden_layers_sizes: [256, 256]
+
+  val_optimizer_kwargs:
+    optimizer_type: adam
+    schedule:
+    clip_gradient: 1.0
+    optimizer_kwargs:  
+      learning_rate: 0.0001
+      b1: 0.9
+      b2: 0.999
+
+  config_kwargs:
+    batch_size: 216
+    prox_cf: 0.2
+    prox_period: 100_000
+    prox_clip: 1.0
+    prox_stop: -1
+    ent_cf: 0.005
+    ent_clip: 1.0
+    eps_thr: 0.01
+    zero_sum_reg: False
+    adv_clip: 2.0
+    gae_lambda: 0.75
+
+  training_kwargs:
+    budget: 4_000_000
+    log_interval: 1_000
+    eval_interval: 10_000
+    checkpoint_interval: 1_000_000
+
+seeds: 
+  - 1
+  - 2
+  - 3

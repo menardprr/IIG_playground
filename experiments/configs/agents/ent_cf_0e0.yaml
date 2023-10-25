@@ -1,0 +1,6 @@
+agent_class: 'agents.prox.ProxAgent'
+
+init_kwargs:
+  config_kwargs:
+    ent_cf: 0.0
+    name: 'ent_cf_0e0'

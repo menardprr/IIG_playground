@@ -1,0 +1,6 @@
+agent_class: 'agents.prox.ProxAgent'
+
+init_kwargs:
+  config_kwargs:
+    prox_cf: 0.2
+    name: 'prox_cf_2e-1'

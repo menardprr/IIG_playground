@@ -1,0 +1,6 @@
+agent_class: 'agents.prox.ProxAgent'
+
+init_kwargs:
+  config_kwargs:
+    eps_thr: 0.1
+    name: 'eps_thr_1e-1'
